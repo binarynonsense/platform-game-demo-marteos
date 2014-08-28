@@ -30,39 +30,51 @@
 #include "vga.h"
 #include <stdio.h>
 
-class CFrame{
+class CFrame
+{
+    
 public:
+    
     int (* pixelColor)[50][55];
+    
 };
 
 enum states {IDLE, WALKING, JUMPING};
 enum directions {LEFT, RIGHT};
 
-class CSprite{
+class CSprite
+{
+    
 private:
-        int posX,posY;
-        int numFrames;  
+    
+    float posX, posY;
+    int numFrames;
         
-             
-        
-public:        
-        CFrame *frames; 
-        CSprite();
-        CSprite(int nFrames);
-        
-        states state;
-        states previousState;
-        directions direction;
-        int frameState[3][6];
-        int frameNumber;
-        int jumpDistance;
-        int GetPosX(){return posX;};
-        int GetPosY(){return posY;};
-        void SetPosX(int x){posX=x;};
-        void SetPosY(int y){posY=y;};
-        
-        void CheckForMovement();
-        void Draw(unsigned char *buffer);
+public:  
+    
+    CFrame *frames; 
+    CSprite();
+    CSprite(int nFrames);
+    
+    states state;
+    states previousState;
+    directions direction;
+    
+    int frameState[3][6];
+    int frameNumber;
+    float timeSinceFrameChange;
+    
+    int jumpDistance;
+    float speedX; // pixels per second
+    
+    void Init();
+    float GetPosX(){return posX;};
+    float GetPosY(){return posY;};
+    void SetPosX(float x){posX=x;};
+    void SetPosY(float y){posY=y;};
+    
+    void CheckForMovement(float deltaTime);
+    void Draw(unsigned char *buffer);
 };
 
 #endif

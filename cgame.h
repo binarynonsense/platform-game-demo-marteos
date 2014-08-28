@@ -21,7 +21,7 @@
 -- See COPYING file for more info about the license                        --
 --                                                                         --
 -----------------------------------------------------------------------------
---                        last update: 08 Oct 09                           --
+--                      last update: 24 Aug 2014                           --
 ---------------------------------------------------------------------------*/
 
 #ifndef CGAME_H
@@ -40,22 +40,26 @@
 
 #define PCI_DEVICE_ID_S3_TRIO64V2 35073
 
-class CGame{
-
+class CGame
+{
     private:
 
         CSprite *mario;        
-        int gameOver;        
-        double period;
-        struct timespec period_ts;
+        int gameOver;
 
     public:
+        
+        double deltaTime;
+        struct timespec timeLastFrame, timeCurrentFrame;  
+        
         //CGame();
         unsigned char *buffer;
         void Init();
 //         void CheckForMovement();
         void DrawCanvas();
-        void Flip();
+        void Blit();
         int GameLoop();
+        
+        double TimespecDiff(struct timespec start, struct timespec end);
 };
 #endif
