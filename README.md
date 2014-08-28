@@ -1,8 +1,6 @@
 Platform Game Demo for MaRTE OS
 ==========================
 
-Demo from 2009
-
 Controls: wasd
 
 Video: https://www.youtube.com/watch?v=lpaYWefTiIE
