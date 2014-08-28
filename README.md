@@ -5,7 +5,7 @@ Demo from 2009
 
 Controls: wasd
 
-Vídeo: https://www.youtube.com/watch?v=lpaYWefTiIE
+Video: https://www.youtube.com/watch?v=lpaYWefTiIE
 
 ---------------------------
 
