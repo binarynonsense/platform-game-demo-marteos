@@ -7,7 +7,7 @@ Controls: wasd
 
 ---------------------------
 
-Had to modify some files in the current version of MaRTE (marte_1.9_21Aug2014) to be able to build the program (I've copied my modified versions in the marte folder):
+Had to modify some files in the current version of MaRTE (marte_1.9_21Aug2014) to be able to build the program (I've copied my modified versions in the marte_modified_files folder):
 
 drivers/svga/vga.h:
 
